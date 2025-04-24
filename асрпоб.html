@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение языку программирования Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #3776ab;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tabs {
+            display: flex;
+            list-style: none;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+        }
+        
+        .tab:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .tab.active {
+            border-bottom: 3px solid #3776ab;
+            color: #3776ab;
+            background-color: #f9f9f9;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 0 0 5px 5px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            color: #3776ab;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            tab-size: 4;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3776ab;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2a5f8a;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Python</h1>
+            <p>Интерактивное обучение программированию на языке Python</p>
+        </header>
+        
+        <ul class="tabs">
+            <li class="tab active" data-tab="intro">Введение</li>
+            <li class="tab" data-tab="comands">Команды</li>
+            <li class="tab" data-tab="basics">Основы</li>
+            <li class="tab" data-tab="functions">Функции</li>
+            <li class="tab" data-tab="oop">ООП</li>
+            <li class="tab" data-tab="projects">Проекты</li>
+        </ul>
+        
+        <div class="tab-content active" id="intro">
+            <h2>Введение в Python</h2>
+            <p>Python — это высокоуровневый язык программирования общего назначения, который используется в веб-разработке, data science, создании скриптов, автоматизации и многом другом.</p>
+            <p><strong>Язык программирования</strong> необходим для разработки компьютерных программ. <em>Программы</em> — это набор команд для компьютера. Выполняя команды программы, компьютер делает то, что от него требуется: выводит информацию на экран, ожидает ввода данных и т.д.</p>
+
+                <p>В настоящее время существует множество языков программирования. Может возникнуть вопрос: неужели нет какого-то одного универсального языка? Универсальный язык, который напрямую «понимает» компьютер — язык машинных команд.</p>
+
+                <p>Однако человеку писать на таком языке <u>очень сложно</u>. Например, программа, которая выводит на экран строку <em>«Hello, world!»</em>, на языке машинных команд будет выглядеть так: <code>BB 11 01 B9 0D 00 B4 0E 8A 07 43 CD 10 E2 F9 CD 20 48 65 6C 6C 6F 2C 20 77 6F 72 6C 64 21</code>.</p>
+
+                <p>Поэтому были разработаны <u>языки программирования</u>, правила и команды которых понятны для человека, а сами языки похожи на «естественные». Та же самая программа, выводящая фразу «Hello, world!», на языке Python выглядит следующим образом: <code>print("Hello, world!")</code>.</p>
+
+                <p>У разных языков программирования есть свои <u>достоинства</u> и <u>недостатки</u>. В среде программистов считается, что одним из самых простых языков для новичков является именно <em>Python</em> (правильно его читать как «пайтон», с ударением на первый слог).</p>
+
+                <p>Первая версия Python была разработана в 1991 году программистом из Нидерландов <strong>Гвидо ван Россумом</strong>. В настоящее время выходят новые версии языка, которые расширяют его возможности, а сам он занимает верхние строчки рейтингов языков программирования. Python применяется во многих сферах: веб-разработка, анализ данных и машинное обучение и др.</p>
+
+                <p>Главное достоинство Python — простота синтаксиса и команд, а также большое количество библиотек, которые содержат уже написанный программный код для решения широкого спектра задач. Python даже применяют в своих исследованиях и разработках специалисты, чьи профессии напрямую не связаны с программированием. Один из самых частых примеров — применение Python для анализа большого количества данных и нахождения корреляции между ними.</p>
+
+                <p>Python — один из самых востребованных языков программирования в мире. Его популярность поддерживает постоянный спрос на Python-разработчиков.</p>
+            <p>Основные преимущества Python:</p>
+            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li>Простой и понятный синтаксис</li>
+                <li>Кроссплатформенность</li>
+                <li>Большое количество библиотек</li>
+                <li>Активное сообщество</li>
+                <li>Python интуитивно понятен, удобен в использовании и занимает второе место в мире по простоте освоения.</li>
+                <li>Профессионалы часто обращаются к Python, потому что он универсален и совместим со всеми платформами операционных систем. </li>    
+            </ul>
+            
+            <p>Первый код на Python:</p>
+            <pre><code># Это комментарий
+print("Hello, World!")  # Выводим текст на экран</code></pre>
+            
+        </div>
+        <div class="tab-content" id="comands">
+<h2>1. Основные встроенные функции</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>print()</strong> – вывод данных</li>
+  <li><strong>input()</strong> – ввод данных</li>
+  <li><strong>len()</strong> – длина объекта</li>
+  <li><strong>type()</strong> – тип объекта</li>
+  <li><strong>id()</strong> – идентификатор объекта</li>
+  <li><strong>range()</strong> – генерация последовательности чисел</li>
+  <li><strong>enumerate()</strong> – нумерация элементов</li>
+  <li><strong>zip()</strong> – объединение итерируемых объектов</li>
+  <li><strong>sum()</strong> – сумма элементов</li>
+  <li><strong>min()</strong>, <strong>max()</strong> – минимальное и максимальное значение</li>
+  <li><strong>abs()</strong> – модуль числа</li>
+  <li><strong>round()</strong> – округление числа</li>
+  <li><strong>sorted()</strong> – сортировка</li>
+  <li><strong>reversed()</strong> – обратная последовательность</li>
+  <li><strong>open()</strong> – работа с файлами</li>
+</ul>
+<h2>2. Преобразование типов данных</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>int()</strong> – целое число</li>
+  <li><strong>float()</strong> – число с плавающей точкой</li>
+  <li><strong>str()</strong> – строка</li>
+  <li><strong>bool()</strong> – логическое значение</li>
+  <li><strong>list()</strong> – список</li>
+  <li><strong>tuple()</strong> – кортеж</li>
+  <li><strong>dict()</strong> – словарь</li>
+  <li><strong>set()</strong> – множество</li>
+  <li><strong>frozenset()</strong> – неизменяемое множество</li>
+  <li><strong>bytes()</strong>, <strong>bytearray()</strong> – байтовые строки</li>
+  <li><strong>bin()</strong>, <strong>hex()</strong>, <strong>oct()</strong> – представление чисел в разных системах(в двоичной, шестнадцатиричной и восьмеричной)</li>
+  <li><strong>chr()</strong>, <strong>ord()</strong> – символ по коду и код символа</li>
+</ul>
+<h2>3. Управляющие конструкции</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>if</strong>, <strong>elif</strong>, <strong>else</strong> – условные операторы</li>
+  <li><strong>for</strong> – цикл по последовательности</li>
+  <li><strong>while</strong> – цикл с условием</li>
+  <li><strong>break</strong> – выход из цикла</li>
+  <li><strong>continue</strong> – переход к следующей итерации</li>
+  <li><strong>pass</strong> – пустая инструкция</li>
+  <li><strong>match</strong>, <strong>case</strong> – структурное сопоставление (Python 3.10+)</li>
+</ul>
+
+<h2>4. Функции и ООП</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>def</strong> – определение функции</li>
+  <li><strong>return</strong> – возврат значения</li>
+  <li><strong>lambda</strong> – анонимная функция</li>
+  <li><strong>class</strong> – определение класса</li>
+  <li><strong>self</strong> – ссылка на экземпляр класса</li>
+  <li><strong>__init__()</strong> – конструктор класса</li>
+  <li><strong>super()</strong> – доступ к родительскому классу</li>
+  <li><strong>staticmethod</strong>, <strong>classmethod</strong> – декораторы методов</li>
+  <li><strong>property</strong> – свойство класса</li>
+</ul>
+<h2>5. Импорт и модули</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>import</strong> – импорт модуля</li>
+  <li><strong>from ... import ...</strong> – выборочный импорт</li>
+  <li><strong>as</strong> – псевдоним для модуля/функции</li>
+</ul>
+
+<h2>6. Обработка исключений</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>try</strong>, <strong>except</strong> – перехват исключений</li>
+  <li><strong>finally</strong> – выполнение кода в любом случае</li>
+  <li><strong>raise</strong> – вызов исключения</li>
+  <li><strong>assert</strong> – проверка условия</li>
+</ul>
+<h2>7. Контекстные менеджеры и прочие важные команды</h2>
+<ul  style="margin-left: 20px; margin-bottom: 15px;">
+  <li><strong>with</strong> – менеджер контекста</li>
+  <li><strong>del</strong> – удаление объекта</li>
+  <li><strong>global</strong>, <strong>nonlocal</strong> – области видимости</li>
+  <li><strong>yield</strong> – генераторные функции</li>
+  <li><strong>async</strong>, <strong>await</strong> – асинхронное программирование</li>
+</ul>
+
+        </div>
+        <div class="tab-content" id="basics">
+            <h2>Основы Python</h2>
+            <p>Изучите фундаментальные концепции языка:</p>
+            
+            <h3>Переменные</h3>
+            <pre><code># Объявление переменных
+name = "Алексей"
+age = 25
+is_student = True</code></pre>
+            
+            <h3>Условные операторы</h3>
+            <pre><code># if-elif-else
+temperature = 23
+
+if temperature > 30:
+    print("Жарко")
+elif temperature > 20:
+    print("Тепло")
+else:
+    print("Прохладно")</code></pre>
+            
+            <h3>Циклы</h3>
+            <pre><code># Цикл for
+for i in range(5):
+    print(i)  # 0, 1, 2, 3, 4
+
+# Цикл while
+count = 0
+while count < 3:
+    print(count)
+    count += 1</code></pre>
+            
+        </div>
+        
+        <div class="tab-content" id="functions">
+            <h2>Функции в Python</h2>
+            <p>Функции позволяют организовывать код в повторно используемые блоки.</p>
+            
+            <pre><code># Определение функции
+def greet(name):
+    """Приветствует пользователя"""
+    return f"Привет, {name}!"
+
+# Вызов функции
+message = greet("Мария")
+print(message)  # Привет, Мария!</code></pre>
+            
+            <h3>Аргументы по умолчанию</h3>
+            <pre><code>def power(base, exponent=2):
+    return base ** exponent
+
+print(power(3))    # 9
+print(power(3, 3)) # 27</code></pre>
+            
+            <h3>Лямбда-функции</h3>
+            <pre><code># Анонимная функция
+square = lambda x: x * x
+print(square(5))  # 25</code></pre>
+            
+        </div>
+        
+        <div class="tab-content" id="oop">
+            <h2>Объектно-ориентированное программирование</h2>
+            <p>Python поддерживает ООП — парадигму программирования, основанную на объектах.</p>
+            
+            <pre><code># Класс и объект
+class Dog:
+    # Конструктор
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    # Метод
+    def bark(self):
+        return f"{self.name} говорит: Гав!"
+
+# Создание объекта
+my_dog = Dog("Бобик", 3)
+print(my_dog.bark())</code></pre>
+            
+            <h3>Наследование</h3>
+            <pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        raise NotImplementedError
+
+class Cat(Animal):
+    def speak(self):
+        return "Мяу!"
+
+my_cat = Cat("Мурзик")
+print(my_cat.speak())</code></pre>
+            
+
+        </div>
+        
+        <div class="tab-content" id="projects">
+            <h2>Практические проекты</h2>
+            <p>Примените свои знания на практике:</p>
+            
+            <h3>1. Калькулятор</h3>
+            <p>Консольное приложение для базовых арифметических операций.</p>
+            
+            <h3>2. Телефонная книга</h3>
+            <p>Хранение и поиск контактов с возможностью сохранения в файл.</p>
+        
+            
+            <h3>3. Бот для Telegram</h3>
+            <p>Создание чат-бота с использованием python-telegram-bot.</p>
+            
+            <h3>4. Анализатор данных</h3>
+            <p>Визуализация данных с помощью matplotlib и pandas.</p>
+            
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Learn Python. Все права защищены.</p>
+            <p>Для начинающих программистов</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    tab.classList.add('active');
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
